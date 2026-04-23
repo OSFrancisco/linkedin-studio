@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Generateur local de post LinkedIn et d'image IA avec Gemini",
   "type": "module",
-  "main": "server/index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "node server/index.js",
-    "start": "node server/index.js"
+    "dev": "node server.js",
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=18"
