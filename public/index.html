@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn AI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="hero-card">
+      <p class="eyebrow">LinkedIn edition</p>
+      <h1>Studio pour généré ton post LinkedIn.</h1>
+      <p class="intro">
+        Renseigne ton contexte, lance la génération du post, affine-le avec tes
+        commentaires, puis crée un visuel en IA prêt à accompagner la
+        publication.
+      </p>
+    </section>
+
+    <section class="studio-grid">
+      <form class="panel panel-form" id="post-form">
+        <div class="field-group">
+          <label for="context">Contexte du post</label>
+          <textarea id="context" name="context" rows="10"
+            placeholder="Exemple : je veux annoncer un retour d'expérience sur un atelier UX, expliquer la valeur créée pour le client, et adopter un ton expert mais accessible."
+            required></textarea>
+        </div>
+
+        <div class="button-row">
+          <button type="submit" id="generate-post-btn">Générer le post</button>
+        </div>
+
+        <div class="field-group">
+          <label for="post-result">Post généré</label>
+          <textarea id="post-result" name="post-result" rows="16"
+            placeholder="Le post généré apparaîtra ici."></textarea>
+        </div>
+
+        <div class="field-group">
+          <label for="feedback">Corrections / commentaires supplémentaires</label>
+          <textarea id="feedback" name="feedback" rows="6"
+            placeholder="Exemple : rends l'accroche plus percutante, raccourcis la fin, ajoute une question finale."></textarea>
+        </div>
+
+        <div class="button-row">
+          <button type="button" class="secondary" id="refine-post-btn">
+            Améliorer le post
+          </button>
+        </div>
+
+        <div class="field-group">
+          <label for="image-context">Contexte supplémentaire pour l’image</label>
+          <textarea id="image-context" name="image-context" rows="5"
+            placeholder="Exemple : ambiance éditoriale premium, fond crème, scène minimaliste, portrait photo-réaliste, lumière douce, sans ordinateur visible."></textarea>
+        </div>
+
+        <div class="button-row">
+          <button type="button" class="ghost" id="generate-image-btn">
+            Générer l’image
+          </button>
+        </div>
+      </form>
+
+      <aside class="panel panel-preview">
+        <div class="status-row">
+          <div class="status-card" id="status-box" aria-live="polite">
+            Prêt. Ajoute un contexte pour commencer.
+          </div>
+          <img class="loading-indicator" id="loading-indicator" src="/src/loading.gif" alt="Chargement en cours"
+            hidden />
+        </div>
+
+        <div class="preview-card">
+          <div class="preview-header">
+            <span>Visuel LinkedIn</span>
+            <span class="preview-badge">1:1</span>
+          </div>
+
+          <div class="image-frame" id="image-frame">
+            <p class="image-placeholder" id="image-placeholder">
+              L’image générée apparaîtra ici.
+            </p>
+            <img id="generated-image" alt="Image générée pour le post LinkedIn" />
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+
+</html>
